@@ -64,6 +64,5 @@ export default {
 
 <style lang="stylus" scoped>
   .home
-    z-index: -1
     background: #f5f5f5
 </style>
