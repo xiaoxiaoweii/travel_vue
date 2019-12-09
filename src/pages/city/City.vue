@@ -1,11 +1,11 @@
 <template>
   <div class="city">
     <city-header></city-header>
+    <city-hot :hot="hotCities"></city-hot>
+    <city-letter :cities="cities"></city-letter>
     <city-list 
       :cities="cities" 
-      :hot="hotCities"
       @change="handleLetterChange"
-      :letter="letter"
     ></city-list>
   </div>
 </template>
@@ -14,17 +14,20 @@
 import axios from 'axios'
 import CityHeader from './components/Header'
 import CityList from './components/List'
+import CityHot from './components/Hot'
+import CityLetter from './components/Letter'
 export default {
   name: 'City',
   components: {
     CityHeader,
-    CityList
+    CityHot,
+    CityLetter,
+    CityList,
   },
   data () {
     return {
       cities: {},
-      hotCities: [],
-      letter: ''
+      hotCities: []
     }
   },
   methods: {

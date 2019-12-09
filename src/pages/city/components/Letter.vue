@@ -1,30 +1,21 @@
 <template>
-  <div ref="wrapper">
-    <div>
-      <div 
-        class="area" 
-        v-for="(item, key) of cities"
-        :key="item.id"
-      >
-        <div class="title">{{key}}</div>
+    <div class="list">
+      <div class="area">
+        <div class="title">字母排序</div>
         <div 
-          class="city-list"
-          v-for="innerItem of item"
-          :key="innerItem.id"
+          class="letter-list"
+          v-for="(item, key) of cities"
+          :key="key"
         >
-          {{innerItem.name}}</div>
+          {{key}}
+        </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
-import Bscroll from 'better-scroll'
 export default {
-  name: 'CityList',
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
-  },
+  name: 'CityLetter',
   props: {
     cities: Object
   }
@@ -41,14 +32,13 @@ export default {
       margin: .24rem .3rem
       line-height: .3rem
       color: #666
-    .city-list
+    .letter-list
       box-sizing: border-box
       float: left
       height: .8rem
-      width: 25%
+      width: 16.66%
       line-height: .8rem
       text-align: center
       background: #fff
-      ellipsis()
-      border: .01rem solid #ddd
+      ellipsis()  
 </style>
