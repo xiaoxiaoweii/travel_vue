@@ -1,19 +1,26 @@
 <template>
   <ul class="list">
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
-    <li class="item">A</li>
+    <li
+      class="item"
+      v-for="(item, key) of cities"
+      :key="key"
+      @click="handleLetterClick"
+    >{{key}}</li>
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'CityAlphabet'
+  name: 'CityAlphabet',
+  props: {
+    cities: Object
+  },
+  methods: {
+    handleLetterClick (e) {
+      this.$emit('change', e.target.innerText)
+    }
+  }
 }
-
 </script>
 
 <style lang="stylus" scoped>
