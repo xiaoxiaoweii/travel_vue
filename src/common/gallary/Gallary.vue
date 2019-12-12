@@ -3,7 +3,7 @@
     <div class="wrapper">
       <swiper :options="swiperOptions">
         <swiper-slide>
-          <img class="gallary-img" src="http://img1.qunarzz.com/sight/p0/1603/5e/5ef2033d103ec26a90.water.jpg_350x240_6184f8ae.jpg" />
+          <img class="gallary-img" src="//img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_600x330_5597540f.jpg" />
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>

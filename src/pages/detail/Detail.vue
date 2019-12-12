@@ -2,40 +2,53 @@
   <div>
     <detail-banner></detail-banner>
     <detail-header></detail-header>
-    <div class="content">
-      <detail-list :list="list"></detail-list>
-    </div>
+    <detail-info></detail-info>
+    <detail-location></detail-location>
+    <detail-recommend :list="recommendList"></detail-recommend>
   </div>
 </template>
 
 <script>
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
+import DetailInfo from './components/Info'
+import DetailLocation from './components/Location'
 import DetailList from './components/List'
+import DetailRecommend from './components/Recommend'
+import axios from 'axios'
 export default {
   name: 'Detail',
   components: {
     DetailBanner,
     DetailHeader,
-    DetailList
+    DetailInfo,
+    DetailLocation,
+    DetailList,
+    DetailRecommend
   },
   data () {
     return {
-      list: [{
-        title: '成人票'
-      }, {
-        title: '学生票'
-      }, {
-        title: '儿童票'
-      }, {
-        title: '特惠票'
-      }]
+      recommendList: []
     }
+  },
+  methods: {
+    getDetailInfo () {
+      axios.get('api/index.json')
+        .then(this.getDetailInfoSucc)
+    },
+    getDetailInfoSucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        const data = res.data
+        this.recommendList = data.recommendList
+      }
+    }
+  },
+  mounted () {
+    this.getDetailInfo()
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-  .content
-    height: 50rem
 </style>

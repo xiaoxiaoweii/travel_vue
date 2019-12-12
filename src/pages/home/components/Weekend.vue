@@ -4,7 +4,7 @@
       周末去哪儿
     </div>
     <ul>
-      <li
+      <router-link tag="li" :to="'/detail/' + item.id"
         class="item border-bottom"
         v-for="item of list"
         :key="item.id"
@@ -14,7 +14,7 @@
         </div>
         <p class="info">{{item.title}}</p>
         <p class="info item-desc">{{item.desc}}</p>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>

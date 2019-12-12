@@ -20,7 +20,7 @@ export default {
 <style lang="stylus" scoped>
   .border-rightleft
     &:before
-      border-color: #212121
+      border-color: #ffe
     &:after
       border-color: #212121
   .around
@@ -28,6 +28,7 @@ export default {
     line-height: 1rem
     background: #fff
     .around-left
+        margin: .1rem 0
         width: 50%
         float: left
         text-align: center
