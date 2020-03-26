@@ -33,15 +33,17 @@ export default {
   },
   methods: {
     getDetailInfo () {
-      axios.get('../../../static/api/detail.json')
+      axios.get('../../../static/api/index.json')
         .then(this.getDetailInfoSucc)
     },
     getDetailInfoSucc (res) {
       res = res.data
       if (res.ret && res.data) {
         const data = res.data
+        console.log(res.data)
         this.recommendList = data.recommendList
       }
+      console.log(this.recommendList)
     }
   },
   mounted () {
