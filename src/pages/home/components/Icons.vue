@@ -37,6 +37,7 @@ export default {
     pages () {
       const pages = []
       this.list.forEach((item, index) => {
+        // 当前下标数据应该展示在第几页
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

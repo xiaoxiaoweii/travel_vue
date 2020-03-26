@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     getDetailInfo () {
-      axios.get('api/index.json')
+      axios.get('../../../static/api/detail.json')
         .then(this.getDetailInfoSucc)
     },
     getDetailInfoSucc (res) {
